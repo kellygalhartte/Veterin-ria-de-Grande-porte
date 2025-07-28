@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    margin: 0;
+    background: linear-gradient(120deg, #e0ffe0 0%, #b3e6b3 100%);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    color: #222;
+}
+
+section#main {
+    display: flex;
+    align-items: center;
+    padding: 30px 10%;
+    background: linear-gradient(90deg, #2b801f 70%, #4caf50 100%);
+    box-shadow: 0 4px 12px rgba(43, 128, 31, 0.1);
+}
+
+#main div {
+    color: white;
+    margin-left: 30px;
+}
+
+.foto img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 16px rgba(43, 128, 31, 0.2);
+}
+
+section#experiencia {
+    background: #fff;
+    margin: 40px auto;
+    padding: 30px 10%;
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(43, 128, 31, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animação de ondas verdes suaves no fundo */
+section#experiencia::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 120px;
+    background: url('data:image/svg+xml;utf8,<svg width="100%" height="120" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 60C120 100 360 100 480 60C600 20 840 20 960 60C1080 100 1320 100 1440 60V120H0V60Z" fill="%234caf50" fill-opacity="0.18"/><path d="M0 90C120 130 360 130 480 90C600 50 840 50 960 90C1080 130 1320 130 1440 90V120H0V90Z" fill="%232b801f" fill-opacity="0.13"/></svg>');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+    animation: waveMove 8s linear infinite alternate;
+}
+
+@keyframes waveMove {
+    0% { background-position-x: 0; }
+    100% { background-position-x: 100px; }
+}
+
+/* Garante que o conteúdo fique acima da animação */
+section#experiencia > * {
+    position: relative;
+    z-index: 1;
+}
+
+section#experiencia h2 {
+    color: #2b801f;
+    margin-bottom: 18px;
+}
+
+section#experiencia p {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+ul.timeline {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0 0 0;
+    border-left: 4px solid #2b801f;
+}
+
+ul.timeline li {
+    position: relative;
+    margin-bottom: 28px;
+    padding-left: 30px;
+}
+
+ul.timeline li::before {
+    content: '';
+    position: absolute;
+    left: -12px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    background: #4caf50;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(43, 128, 31, 0.15);
+}
+
+span.ano {
+    font-weight: bold;
+    color: #2b801f;
+    background: #e0ffe0;
+    padding: 3px 10px;
+    border-radius: 12px;
+    margin-right: 10px;
+    font-size: 1em;
+    box-shadow: 0 1px 4px rgba(43, 128, 31, 0.07);
+}
+
+section#contato {
+    background: #2b801f;
+    color: #fff;
+    padding: 30px 10%;
+    border-radius: 0 0 18px 18px;
+    margin: 0 auto 30px auto;
+}
+
+section#contato h2 {
+    margin-top: 0;
+    color: #fff;
+}
+
+section#contato a {
+    color: #e0ffe0;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#experiencia ul[style] li {
+    font-size: 1.15em;
+    background: #e0ffe0;
+    border-radius: 14px;
+    padding: 10px 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(43,128,31,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    gap: 10px;
+}
+
+#experiencia ul[style] li:hover {
+    background: #c6f7c6;
+    transform: scale(1.04);
+    box-shadow: 0 4px 16px rgba(43,128,31,0.13);
+}
+
+#experiencia ul[style] li::before {
+    content: '';
+    display: none;
+}
+
+#experiencia ul[style] li {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+#experiencia ul[style] li span.icone {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+@media (max-width: 800px) {
+    section#main {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 5%;
+    }
+    .foto img {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 18px;
+    }
+    #main div {
+        margin-left: 0;
+    }
+    section#experiencia, section#contato {
+        padding: 20px 5%;
+    }
+}
